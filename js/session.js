@@ -22,7 +22,7 @@ export const session = (() => {
 
     const login = async (button) => {
 
-        const btn = util.disableButton(button, '<div class="spinner-border spinner-border-sm me-1" role="status"></div>Loading..');
+        const btn = util.disableButton(button, '<div class="spinner-border spinner-border-sm me-1" role="status"></div>Cargando..');
         const formEmail = document.getElementById('loginEmail');
         const formPassword = document.getElementById('loginPassword');
 

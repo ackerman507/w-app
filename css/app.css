@@ -3,9 +3,72 @@ html {
     scrollbar-width: none !important;
 }
 
+@font-face {
+    font-family: 'Donalia';
+    src: url('../assets/fonts/Donalia.ttf');
+}
+
 body {
     font-family: 'Josefin Sans', sans-serif !important;
     padding: 0 !important;
+}
+
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.black-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.red-overlay {
+    background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.bg-cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg-couple {
+    background-image: url('../assets/images/coupleshoot.jpg');
+}
+
+h1{
+    font-family:'Donalia', cursive ;
+}
+
+.h-30{
+    height: 300px;
+}
+
+/* Laptop */
+@media (min-width: 992px) {
+    .h-30{
+        height: 500px;
+    }
+}
+
+.pt-serif{
+    font-family: 'PT Serif', serif;
+}
+
+.bg-danger{
+    background-color: #fe0707 !important;
 }
 
 .font-esthetic {
@@ -13,7 +76,7 @@ body {
     font-family: 'Great Vibes', cursive !important;
 }
 
-.open-sans{
+.open-sans {
     font-family: 'Open Sans', cursive !important;
 }
 
@@ -122,10 +185,10 @@ body {
     animation: love 5s ease-in-out infinite;
 }
 
-.dark-section {
+/* .dark-section {
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
-}
+} */
 
 .service .service-img {
     position: relative;
@@ -149,12 +212,14 @@ body {
 .service .service-img .icon i {
     font-size: 36px;
 }
+
 .divider {
     height: 4px;
     width: 70px;
     background: linear-gradient(to right, #000000, #fe0707);
     margin: 16px auto;
 }
+
 .btn-main {
     background: linear-gradient(to right, #000000, #fe0707);
     border-radius: 100px;
@@ -185,3 +250,103 @@ footer {
 .color-theme-black {
     color: black;
 }
+
+    
+  /*spinner */
+
+  .heart:before , .heart:after {
+      position: absolute;
+      content: "";
+      left: 25px;
+      top: 0;
+      width: 25px;
+      height: 40px;
+      background: #ff6969;
+      -moz-border-radius: 50px 50px 0 0;
+      border-radius: 50px 50px 0 0;
+      -webkit-transform: rotate(-45deg);
+         -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+           -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      -webkit-transform-origin: 0 100%;
+         -moz-transform-origin: 0 100%;
+          -ms-transform-origin: 0 100%;
+           -o-transform-origin: 0 100%;
+              transform-origin: 0 100%;
+  }
+  
+  .fushiaHeart:before , .fushiaHeart:after
+  {
+    background: #ff1d1d;
+  }
+  .pinkHeart:before , .pinkHeart:after{
+    background: #ff1d1d;
+  }
+  
+  .heart:after{
+      left: 0;
+      -webkit-transform: rotate(45deg);
+         -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+           -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+      -webkit-transform-origin: 100% 100%;
+         -moz-transform-origin: 100% 100%;
+          -ms-transform-origin: 100% 100%;
+           -o-transform-origin: 100% 100%;
+              transform-origin :100% 100%;
+  }
+  
+  @-webkit-keyframes beat {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+
+  
+  .spinner {
+    margin: 50px auto 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .spinner .heart {
+    width: 50px;
+    height: 45px;
+    display: inline-block;
+    opacity:0.8;
+    
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    /* Prevent first frame from flickering when animation starts */
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .heart:before , .heart:after {
+    background: #ff1d1d;
+  }
+  .spinner .heart1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  
+  .spinner .heart2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  
+  @-webkit-keyframes bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0.0) }
+    40% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes bouncedelay {
+    0%, 80%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 40% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }

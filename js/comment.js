@@ -187,7 +187,7 @@ export const comment = (() => {
 
         changeButton(id, true);
         const tmp = button.innerText;
-        button.innerText = 'Loading..';
+        button.innerText = 'Publicando..';
 
         const status = await request(HTTP_GET, '/api/comment/' + id)
             .token(session.get('token'))

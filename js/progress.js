@@ -3,8 +3,8 @@ import { util } from './util.js';
 export const progress = (() => {
 
     const assets = document.querySelectorAll('img');
-    const info = document.getElementById('progress-info');
-    const bar = document.getElementById('progress-bar');
+    // const info = document.getElementById('progress-info');
+    // const bar = document.getElementById('progress-bar');
 
     const total = assets.length;
     let loaded = 0;
@@ -12,15 +12,15 @@ export const progress = (() => {
     const progress = () => {
         loaded += 1;
 
-        bar.style.width = Math.min((loaded / total) * 100, 100).toString() + "%";
-        info.innerText = `Cargando elementos (${loaded}/${total}) [${parseInt((loaded / total) * 100).toFixed(0)}%]`;
+        // bar.style.width = Math.min((loaded / total) * 100, 100).toString() + "%";
+        // info.innerText = `Cargando elementos (${loaded}/${total}) [${parseInt((loaded / total) * 100).toFixed(0)}%]`;
 
         if (loaded == total) {
             util.show();
         }
     };
 
-    info.style.display = 'block';
+    // info.style.display = 'block';
     assets.forEach((asset) => {
         if (asset.complete && asset.naturalWidth !== 0) {
             progress();

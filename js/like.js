@@ -14,7 +14,7 @@ export const like = (() => {
 
         button.disabled = true;
         const tmp = info.innerText;
-        info.innerText = 'Loading..';
+        info.innerText = 'Cargando..';
 
         if (likes.has(id)) {
             await request(HTTP_PATCH, '/api/comment/' + likes.get(id))
