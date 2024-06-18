@@ -201,13 +201,13 @@ export const comment = (() => {
             <label for="form-inner-${id}" class="form-label">Editar</label>
             ${document.getElementById(id).getAttribute('data-parent') === 'true' ? `
             <select class="form-select shadow-sm mb-2" id="form-inner-presence-${id}">
-                <option value="1" ${status.data.presence ? 'selected' : ''}>Hadir</option>
-                <option value="2" ${status.data.presence ? '' : 'selected'}>Berhalangan</option>
+                <option value="1" ${status.data.presence ? 'selected' : ''}>Asistiré</option>
+                <option value="2" ${status.data.presence ? '' : 'selected'}>No podré asistir</option>
             </select>` : ''}
             <textarea class="form-control shadow-sm rounded-3 mb-2" id="form-inner-${id}" placeholder="Type update comment"></textarea>
             <div class="d-flex flex-wrap justify-content-end align-items-center mb-0">
                 <button style="font-size: 0.8rem;" onclick="comment.cancel('${id}')" class="btn btn-sm btn-outline-${theme.isDarkMode('light', 'dark')} rounded-3 py-0 me-1">Cancelar</button>
-                <button style="font-size: 0.8rem;" onclick="comment.update(this)" data-uuid="${id}" class="btn btn-sm btn-outline-${theme.isDarkMode('light', 'dark')} rounded-3 py-0">Update</button>
+                <button style="font-size: 0.8rem;" onclick="comment.update(this)" data-uuid="${id}" class="btn btn-sm btn-outline-${theme.isDarkMode('light', 'dark')} rounded-3 py-0">Actualizar</button>
             </div>`;
 
             document.getElementById(`button-${id}`).insertAdjacentElement('afterend', inner);
@@ -231,7 +231,7 @@ export const comment = (() => {
                 pagination.setResultData(res.data.length);
 
                 if (res.data.length === 0) {
-                    comments.innerHTML = `<div class="h6 text-center fw-bold p-4 my-3 bg-theme-${theme.isDarkMode('dark', 'light')} rounded-4 shadow">Yuk bagikan undangan ini biar banyak komentarnya</div>`;
+                    comments.innerHTML = `<div class="h6 text-center fw-bold p-4 my-3 bg-theme-${theme.isDarkMode('dark', 'light')} rounded-4 shadow">Aún no hay comentarios.</div>`;
                     return;
                 }
 
