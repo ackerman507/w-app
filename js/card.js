@@ -76,7 +76,7 @@ export const card = (() => {
         }
 
         if (session.get('token')?.split('.').length === 3) {
-            action += `<button style="font-size: 0.8rem;" onclick="comment.remove(this)" data-uuid="${comment.uuid}" class="btn btn-sm btn-outline-${btn} rounded-3 py-0" data-own="${comment.own}">Delete</button>`;
+            action += `<button style="font-size: 0.8rem;" onclick="comment.remove(this)" data-uuid="${comment.uuid}" class="btn btn-sm btn-outline-${btn} rounded-3 py-0" data-own="${comment.own}">Eliminar</button>`;
         } else if (owns.has(comment.uuid) && (config.get('can_delete') == true || config.get('can_delete') === undefined)) {
             action += `<button style="font-size: 0.8rem;" onclick="comment.remove(this)" data-uuid="${comment.uuid}" class="btn btn-sm btn-outline-${btn} rounded-3 py-0">Eliminar</button>`;
         }
